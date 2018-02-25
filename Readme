@@ -1,0 +1,15 @@
+This repository contains the implementation details/code for anomaly detection in building's energy consumption. The reader is suggested to read through the paper to know about the approaches in detail.
+
+For short-term data, 
+Dataset: Peccan street data
+Code: Gen_labels.m is used to generate anomaly scores depending on the user defined threshold.
+
+For long-term data,
+Dataset: Private data
+Code: weatherNormalisedData.m is used to annotate the year long observations.
+
+To evaluate the performance metrics, 
+Dataset: Peccan street data
+Code: MetricEval.m is used to compare all the performance metrics discussed in the paper.
+
+To know more about the implementation details, feel free to contact mgaur@sfu.ca
