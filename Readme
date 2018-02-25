@@ -1,11 +1,11 @@
 This repository contains the implementation details/code for anomaly detection in building's energy consumption. The reader is suggested to read through the paper to know about the approaches in detail.
 
 For short-term data, 
-Dataset: Peccan street data
+Dataset: Energy-Dataset --> Pecan_weekday_house_mat and Pecan_weekend_house_mat (Pecan street data from 10 houses)
 Code: Gen_labels.m is used to generate anomaly scores and labels depending on the user defined threshold.
 
 For long-term data,
-Dataset: Private data
+Dataset: HouseData_15_18 (Private 3years data from 5 houses)
 Code: weatherNormalisedData.m is used to annotate the year long observations.
 
 To evaluate the performance metrics, 
