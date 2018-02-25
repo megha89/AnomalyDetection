@@ -2,7 +2,7 @@ This repository contains the implementation details/code for anomaly detection i
 
 For short-term data, 
 Dataset: Peccan street data
-Code: Gen_labels.m is used to generate anomaly scores depending on the user defined threshold.
+Code: Gen_labels.m is used to generate anomaly scores and labels depending on the user defined threshold.
 
 For long-term data,
 Dataset: Private data
