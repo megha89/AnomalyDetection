@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 function [energy_mean,temp_mean] = periodical_day_level(energy1,temp1)
 %UNTITLED Summary of this function goes here
 %  This function aggregates the energy and temp column periodical data into

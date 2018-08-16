@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 function [train, validation] = split_data(temp,energy)
 m = size(temp,1);
 n = floor(m/10);
@@ -8,9 +10,9 @@ while (count < n)
         %start_idx = i;
         i = count+1;
         end_idx = 10;
-        random_indices = randperm(end_idx);
-        %validat_idx = 5 + (count*end_idx)
-        validation_idx(i) = random_indices(1)+(count*end_idx);
+        %random_indices = randperm(end_idx);
+        random_indices = 1:end_idx;
+        validation_idx(i) = random_indices(5)+(count*end_idx);
         count = count+1;
     %end
 end

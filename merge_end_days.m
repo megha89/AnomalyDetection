@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 clc; clear all;
 
 %load('RPCA_weekend_app_lamda980.mat','result','score')

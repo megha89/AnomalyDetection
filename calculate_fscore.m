@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 % Calculating fscore using the saved result matrices of the  
 clc; clear all;
 

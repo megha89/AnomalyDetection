@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 function [result1] = conv_day_mon(result)
 %This function converts the order of the weekdays (from serial to the proper month order)
 

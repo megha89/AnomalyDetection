@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 function [params0,params1,params2] = gridsearch_params(sort_data)
 %Check for the number of pieces in piecewise linear regression required for best fit
 
@@ -30,7 +32,7 @@ params1 = [bp1' coef_part1 coef_part2];
 count = 1;
 
 for j = min_temp:0.1:(max_temp-0.1)
-    for k = (j+0.1):0.1:max_temp
+    for k = (j+0.05):0.1:max_temp
          rows_part1 = sort_data(:,1) <=j;
          rows_part2 = sort_data(:,1) > j & sort_data(:,1) <= k;         
          rows_part3 = sort_data(:,1) > k;

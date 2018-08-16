@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 function [energy_bin, temp_bin,bin_idx] = plot_hist(sort_energy1,sort_temp1)
 %Find bins (distance of 0.5) for temperature and energy
 nbins = 48; %Chosen in a way that distance between two bin is maintained around 0.5

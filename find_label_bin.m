@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 function [anom_data] = find_label_bin(label_anom,tmp_idx,user_thresh,Y_pred_part)
 
 idx_anom = find(tmp_idx(:,2) == label_anom);

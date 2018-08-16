@@ -1,4 +1,6 @@
-function [avg_rank_power] = rankpower_fun(top_m,day_result_mat,day_score_mat,gt_result_mat,gt_score_mat)
+%%This file is Copyright (C) 2018 Megha Gaur.
+
+function [avg_rank_power] = rankpower_fun(top_m,day_result_mat,gt_result_mat)
 
 %UNTITLED3 Summary of this function goes here
 % We have considered the case where m = 3 as seem can only work for
@@ -23,7 +25,7 @@ for i = 1:row_size
             
             if num_anom_not_present == top_m
                 sum_rank_top_m = top_m*(col_size) + (1+2+3);
-                rank_power(i) = (top_m*(top_m+1))/(2*sum_rank_top_m);
+                rank_power(i) = (num_true_out_ret*(num_true_out_ret+1))/(2*sum_rank_top_m);
             else
             
                 for j = 1:num_anom_algo
@@ -31,7 +33,7 @@ for i = 1:row_size
                 end
                 sum_rank_top_m = sum(idx,2)+ (num_anom_not_present)*(col_size) + num_anom_not_present ;
                 idx = [];
-                rank_power(i) = (top_m*(top_m+1))/(2*sum_rank_top_m);
+                rank_power(i) = (num_true_out_ret*(num_true_out_ret+1))/(2*sum_rank_top_m);
             end
                
         else
@@ -43,7 +45,7 @@ for i = 1:row_size
                 end
                 sum_rank_top_m = sum(idx,2);
                 idx = [];
-                rank_power(i) = (top_m*(top_m+1))/(2*sum_rank_top_m);
+                rank_power(i) = (num_true_out_ret*(num_true_out_ret+1))/(2*sum_rank_top_m);
             end
             
         end

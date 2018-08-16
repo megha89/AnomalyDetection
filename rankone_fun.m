@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 function [mean_rankone, sd_rankone] = rankone_fun(result,score,gt_result,gt_score)
 %row_size = size(gt_result,1);
 %col_size = size(gt_result,2);

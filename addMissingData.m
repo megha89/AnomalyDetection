@@ -1,6 +1,8 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 function [added_data] = addMissingData(data)
 %This function adds the missing energy consumption data by looking up the
-%data values for the same timestamp in next year
+%data values for the same timestamp in next or previous year
 
 m = size(data,1);
 %Check if there is an empty cell.

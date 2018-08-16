@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 function [weekday,weekend]= sep_month_day_end(data)
 col = size(data,2);
 month = [1:1:30];

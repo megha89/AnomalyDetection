@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 function [partition_data1,partition_data2,partition_data3,coeff_deter] = partition_data(temp_mean,energy_mean,best_params)
 
 %   This function partitions the energy and temperature columns based on

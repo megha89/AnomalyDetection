@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 clc; clear all;
 
 addpath /Users/meghagupta/sfuvault/Documents/MATLAB/AnomalyDetection/Matrices
@@ -32,8 +34,8 @@ load('gt_weekend_meter_3.mat','gt_result','gt_score');  %threshold is 98% or 2.3
 %load('gt_weekend_meter_11.mat','gt_result','gt_score'); %threshold is 10% or 0.13 sd
 
 %%%FOR SEEM PAPER
-%X = load('seem_weekday_meter.mat','result','score');
-X = load('seem_weekend_meter.mat','result','score');
+X = load('seem_weekday_meter.mat','result','score');
+%X = load('seem_weekend_meter.mat','result','score');
 
 house_fields = fieldnames(X);
 n = numel(house_fields);
@@ -50,12 +52,13 @@ gt_score_mat = cell2mat(gt_score(:));
 [fscore,jaccard,tpr,tnr,fpr] = fscore_fun(day_result_mat,day_score_mat,gt_result_mat,gt_score_mat)
 
 %FP-100
-true_anom_thresh = 0.9;
-[fp_100] = fp_fun(true_anom_thresh,day_result_mat,gt_result_mat,gt_score_mat)
+
+[fp_100] = fp_fun(day_result_mat,gt_result_mat,gt_score_mat)
+
 
 %Rank_power
 top_m = 3;
-[avg_rank_power] = rankpower_fun(top_m,day_result_mat,day_score_mat,gt_result_mat,gt_score_mat)
+[avg_rank_power] = rankpower_fun(top_m,day_result_mat,gt_result_mat)
 
 %ROC, AUC, PAUC by restricting the fpr values
 [roc_weekday1] = load('tpr_fpr_weekday_1.mat');
@@ -89,6 +92,8 @@ top_m = 3;
 
 %%
 clc; clear all;
+
+
 %%For datasets other than seem
 
 %GT WEEKDAYS
@@ -123,55 +128,55 @@ GT_weekend = load('gt_weekend_meter_dataset_1.mat','ground_truth_weekend','score
 
 % %HP DATA LOADING
 X = load('hp_daytype.mat','hp_data'); % A 30x18 matrix with two consecutive columns representing one house meter data on April and May months.
-[roc_weekday1] = load('tpr_fpr_weekday_1_hp.mat');
-[roc_weekday2] = load('tpr_fpr_weekday_2_hp.mat');
-[roc_weekday3] = load('tpr_fpr_weekday_3_hp.mat');
-[roc_weekday4] = load('tpr_fpr_weekday_4_hp.mat');
-[roc_weekday5] = load('tpr_fpr_weekday_5_hp.mat');
-[roc_weekday6] = load('tpr_fpr_weekday_6_hp.mat');
-[roc_weekday7] = load('tpr_fpr_weekday_7_hp.mat');
-[roc_weekday8] = load('tpr_fpr_weekday_8_hp.mat');
-[roc_weekday9] = load('tpr_fpr_weekday_9_hp.mat');
-[roc_weekday10] = load('tpr_fpr_weekday_10_hp.mat');
-[roc_weekday11] = load('tpr_fpr_weekday_11_hp.mat');
-
-[roc_weekend1] = load('tpr_fpr_weekend_1_hp.mat');
-[roc_weekend2] = load('tpr_fpr_weekend_2_hp.mat');
-[roc_weekend3] = load('tpr_fpr_weekend_3_hp.mat');
-[roc_weekend4] = load('tpr_fpr_weekend_4_hp.mat');
-[roc_weekend5] = load('tpr_fpr_weekend_5_hp.mat');
-[roc_weekend6] = load('tpr_fpr_weekend_6_hp.mat');
-[roc_weekend7] = load('tpr_fpr_weekend_7_hp.mat');
-[roc_weekend8] = load('tpr_fpr_weekend_8_hp.mat');
-[roc_weekend9] = load('tpr_fpr_weekend_9_hp.mat');
-[roc_weekend10] = load('tpr_fpr_weekend_10_hp.mat');
-[roc_weekend11] = load('tpr_fpr_weekend_11_hp.mat');
-
-% X = load('multiuser_daytype.mat','multiuser_data');
-% [roc_weekday1] = load('tpr_fpr_weekday_1_multi.mat');
-% [roc_weekday2] = load('tpr_fpr_weekday_2_multi.mat');
-% [roc_weekday3] = load('tpr_fpr_weekday_3_multi.mat');
-% [roc_weekday4] = load('tpr_fpr_weekday_4_multi.mat');
-% [roc_weekday5] = load('tpr_fpr_weekday_5_multi.mat');
-% [roc_weekday6] = load('tpr_fpr_weekday_6_multi.mat');
-% [roc_weekday7] = load('tpr_fpr_weekday_7_multi.mat');
-% [roc_weekday8] = load('tpr_fpr_weekday_8_multi.mat');
-% [roc_weekday9] = load('tpr_fpr_weekday_9_multi.mat');
-% [roc_weekday10] = load('tpr_fpr_weekday_10_multi.mat');
-% [roc_weekday11] = load('tpr_fpr_weekday_11_multi.mat');
+% [roc_weekday1] = load('tpr_fpr_weekday_1_hp.mat');
+% [roc_weekday2] = load('tpr_fpr_weekday_2_hp.mat');
+% [roc_weekday3] = load('tpr_fpr_weekday_3_hp.mat');
+% [roc_weekday4] = load('tpr_fpr_weekday_4_hp.mat');
+% [roc_weekday5] = load('tpr_fpr_weekday_5_hp.mat');
+% [roc_weekday6] = load('tpr_fpr_weekday_6_hp.mat');
+% [roc_weekday7] = load('tpr_fpr_weekday_7_hp.mat');
+% [roc_weekday8] = load('tpr_fpr_weekday_8_hp.mat');
+% [roc_weekday9] = load('tpr_fpr_weekday_9_hp.mat');
+% [roc_weekday10] = load('tpr_fpr_weekday_10_hp.mat');
+% [roc_weekday11] = load('tpr_fpr_weekday_11_hp.mat');
 % 
-% [roc_weekend1] = load('tpr_fpr_weekend_1_multi.mat');
-% [roc_weekend2] = load('tpr_fpr_weekend_2_multi.mat');
-% [roc_weekend3] = load('tpr_fpr_weekend_3_multi.mat');
-% [roc_weekend4] = load('tpr_fpr_weekend_4_multi.mat');
-% [roc_weekend5] = load('tpr_fpr_weekend_5_multi.mat');
-% [roc_weekend6] = load('tpr_fpr_weekend_6_multi.mat');
-% [roc_weekend7] = load('tpr_fpr_weekend_7_multi.mat');
-% [roc_weekend8] = load('tpr_fpr_weekend_8_multi.mat');
-% [roc_weekend9] = load('tpr_fpr_weekend_9_multi.mat');
-% [roc_weekend10] = load('tpr_fpr_weekend_10_multi.mat');
-% [roc_weekend11] = load('tpr_fpr_weekend_11_multi.mat');
-%X = load('rpca_daytype.mat','rpca_score');
+% [roc_weekend1] = load('tpr_fpr_weekend_1_hp.mat');
+% [roc_weekend2] = load('tpr_fpr_weekend_2_hp.mat');
+% [roc_weekend3] = load('tpr_fpr_weekend_3_hp.mat');
+% [roc_weekend4] = load('tpr_fpr_weekend_4_hp.mat');
+% [roc_weekend5] = load('tpr_fpr_weekend_5_hp.mat');
+% [roc_weekend6] = load('tpr_fpr_weekend_6_hp.mat');
+% [roc_weekend7] = load('tpr_fpr_weekend_7_hp.mat');
+% [roc_weekend8] = load('tpr_fpr_weekend_8_hp.mat');
+% [roc_weekend9] = load('tpr_fpr_weekend_9_hp.mat');
+% [roc_weekend10] = load('tpr_fpr_weekend_10_hp.mat');
+% [roc_weekend11] = load('tpr_fpr_weekend_11_hp.mat');
+
+%X = load('multiuser_daytype.mat','multiuser_data');
+[roc_weekday1] = load('tpr_fpr_weekday_1_multi.mat');
+[roc_weekday2] = load('tpr_fpr_weekday_2_multi.mat');
+[roc_weekday3] = load('tpr_fpr_weekday_3_multi.mat');
+[roc_weekday4] = load('tpr_fpr_weekday_4_multi.mat');
+[roc_weekday5] = load('tpr_fpr_weekday_5_multi.mat');
+[roc_weekday6] = load('tpr_fpr_weekday_6_multi.mat');
+[roc_weekday7] = load('tpr_fpr_weekday_7_multi.mat');
+[roc_weekday8] = load('tpr_fpr_weekday_8_multi.mat');
+[roc_weekday9] = load('tpr_fpr_weekday_9_multi.mat');
+[roc_weekday10] = load('tpr_fpr_weekday_10_multi.mat');
+[roc_weekday11] = load('tpr_fpr_weekday_11_multi.mat');
+
+[roc_weekend1] = load('tpr_fpr_weekend_1_multi.mat');
+[roc_weekend2] = load('tpr_fpr_weekend_2_multi.mat');
+[roc_weekend3] = load('tpr_fpr_weekend_3_multi.mat');
+[roc_weekend4] = load('tpr_fpr_weekend_4_multi.mat');
+[roc_weekend5] = load('tpr_fpr_weekend_5_multi.mat');
+[roc_weekend6] = load('tpr_fpr_weekend_6_multi.mat');
+[roc_weekend7] = load('tpr_fpr_weekend_7_multi.mat');
+[roc_weekend8] = load('tpr_fpr_weekend_8_multi.mat');
+[roc_weekend9] = load('tpr_fpr_weekend_9_multi.mat');
+[roc_weekend10] = load('tpr_fpr_weekend_10_multi.mat');
+[roc_weekend11] = load('tpr_fpr_weekend_11_multi.mat');
+
 
 house_fields = fieldnames(X);
 n = numel(house_fields);
@@ -205,15 +210,14 @@ weekend_res = sort_res_weekend';
 [auc_weekday, auc_weekend, pauc_weekday,pauc_weekend] = auc_pauc_fun(roc_weekday1,roc_weekday2,roc_weekday3,roc_weekday4,roc_weekday5,roc_weekday6,roc_weekday7,roc_weekday8,roc_weekday9,roc_weekday10,roc_weekday11,roc_weekend1,roc_weekend2,roc_weekend3,roc_weekend4,roc_weekend5,roc_weekend6,roc_weekend7,roc_weekend8,roc_weekend9,roc_weekend10,roc_weekend11)
 
 %FP-100
-true_anom_thresh = 0.9;
-[fp_100_weekday] = fp_fun(true_anom_thresh,weekday_res,gt_result_weekday,gt_score_weekday)
-[fp_100_weekend] = fp_fun(true_anom_thresh,weekend_res,gt_result_weekend,gt_score_weekend)
+
+[fp_100_weekday] = fp_fun(weekday_res,gt_result_weekday,gt_score_weekday)
+[fp_100_weekend] = fp_fun(weekend_res,gt_result_weekend,gt_score_weekend)
 
 
 %Rank Power
 top_m = 3;
 [avg_rank_power_weekday] = rankpower_fun(top_m,weekday_res,gt_result_weekday)
-%top_m = 1:size(weekend_res,2);
 [avg_rank_power_weekend] = rankpower_fun(top_m,weekend_res,gt_result_weekend)
 
 

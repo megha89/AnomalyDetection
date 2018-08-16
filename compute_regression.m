@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 function [B] = compute_regression(data)
 
 X = [ones(size(data,1),1) data(:,1)];

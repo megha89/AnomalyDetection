@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 clc; clear all;
 %addpath C:\Users\Angshul\Documents\MATLAB\AnomalyDetection\Peccan_dataset
 addpath C:\Users\mgaur\Documents\MATLAB\MetricEvaluation\Dataset

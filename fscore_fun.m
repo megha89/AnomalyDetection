@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 function [fscore,jaccard,tpr,tnr,fpr] = fscore_fun(day_result,day_score,gt_result,gt_score)
 row_size = size(day_result,1);
 %thres_size = numel(roc_thres);
@@ -25,9 +27,13 @@ for i = 1:row_size
     rec = tp_count./(tp_count+fn_count);
     if (prec == 0 & rec == 0)
         f_score{i} = 0;
+        
     else
         f_score{i} = (2*prec*rec)./(prec+rec);
+        
     end
+    tp_houses{i} = tp_count
+    fp_houses{i} = fp_count
     tpr{i} = (tp_count)./(tp_count+fn_count);
     tnr{i} = (tn_count)./(tn_count+fp_count);
     fpr{i} = 1-tnr{i};

@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 clc; clear all;
 % Change sheet, xlrange, reshape size and the mat filename.
 

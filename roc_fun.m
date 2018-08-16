@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 function [mean_auc, mean_pauc] = roc_fun(roc_thres,day_result,day_score,gt_result,gt_score)
 
 row_size = size(day_result,1);

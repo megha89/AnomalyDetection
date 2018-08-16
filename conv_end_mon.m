@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 function [result1] = conv_end_mon(result)
 
 row = size(result,1);

@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 clc; clear all;
 %Plot aggregate consumption pattern for different days per hour
 

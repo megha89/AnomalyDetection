@@ -1,3 +1,4 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
 
 clc; clear;
 %addpath C:\Users\mgaur\Documents\MATLAB\AnomalyDetection\Matrices\Pecan_weekday_house_mat
@@ -12,7 +13,7 @@ addpath /Users/meghagupta/sfuvault/Documents/MATLAB/MetricEvaluation/Matrices/Pe
 total = 0;
 for i = 1:9
     days_string = {'1','2','3','4','5','8','11','12','14','16'};
-   % days_string = {'4'};
+    %days_string = {'4'};
     formatSpec1 = 'House%s.mat';
     A1 = days_string{i};
     str = sprintf(formatSpec1,A1);
@@ -31,7 +32,7 @@ for i = 1:9
         z_score = (X-mean_monthly)./sd_monthly;  % z-score is calculated for each element in a matrix 
         %abs_zscore_day = sum(abs(z_score),1); %Sum of absolute values of zscore
         %abs_zscore_day = sum(z_score,1);  %Total SD on both sides
-        user_threshold = 1.3;
+        user_threshold = 2;
         positive_zscore_day = sum(z_score.*(z_score>0),1);       %Computes the sum of the per day positive z-scores
         [sort_pos_zscore, rank_pos_zscore] = sort(positive_zscore_day,'descend');    % Sorts the positive z-scores at day-level and rank them.
         %prompt = 'Please enter the threshold standard deviation';
@@ -87,7 +88,7 @@ for i = 1:9
      max_y = max(X(:));     %Set y-axis limit to max of energy consumed in the month
      
      for k = 1:col_data
-         subplot(5,5,k);    
+         subplot(5,4,k);    
          ylim([0 max_y]);   %y-axis limit set from 0 to max_y
          xlim([1 24]);      %x-axis limit set to hours of the day
          data_day = X(:,k); 
@@ -101,7 +102,7 @@ for i = 1:9
          end
          if isempty(ind2)    % condition to check if any anomaly exists or not
          else
-             plot(ind2,data_day(ind2),'og');    %if anomaly exists, plot the energy data with respective anomalies. 
+             plot(ind2,data_day(ind2),'*k');    %if anomaly exists, plot the energy data with respective anomalies. 
          end
          plot(data_day);
          hold off;
@@ -114,4 +115,4 @@ end
 %save('gt_weekend_meter_dataset_2.mat','ground_truth_weekend','score_weekend');  %
 %save('gt_weekend_meter_dataset.mat','ground_truth_weekend','score_weekend')
 %save('gt_weekend_meter_9.mat','gt_result','gt_score'); %threshold is 20% or 0.26 sd
-save('gt_weekend_meter_dataset_4.mat','ground_truth_weekend','score_weekend'); %thresh 70% or 1.05
+%save('gt_weekend_meter_dataset_4.mat','ground_truth_weekend','score_weekend'); %thresh 70% or 1.05

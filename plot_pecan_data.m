@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 % Calculates the most anomolous days and their score in the each month(april and may) individually of different houses(9 houses). The
 % threshold is set as greater than 75%.The result cell array for every
 % house contains two cell values each containg the anomolous days in a month.

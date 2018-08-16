@@ -1,3 +1,5 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
 %Implementing seem paper on anomaly detection
 clc; clear all;
 
