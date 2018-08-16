@@ -15,7 +15,8 @@ To evaluate the performance metrics,
 Dataset: Peccan street data
 Code: MetricEval.m is used to compare all the performance metrics discussed in the paper.
 
-Another contribution of this paper is in publishing the annotated anomalies obtained from short-range and long-range datasets. The csv files are named as Hue_House_anomalies and Dataport_House_anomalies.
+Another contribution of this paper is in publishing the annotated anomalies obtained from short-range and long-range datasets. 
+The csv files named as Hue_House_anomalies and Dataport_House_anomalies are in the AnnotatedAnomalies folder of this repository.
 
 Please cite our paper if you use our data or annotated anomalies as a benchmark for your research.
 
