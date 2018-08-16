@@ -1,0 +1,22 @@
+%%This file is Copyright (C) 2018 Megha Gaur.
+
+This repository contains the implementation details/code for anomaly detection in building's energy consumption. The reader is suggested to read through the paper to know about the approaches in detail.
+
+For short-term data, 
+Dataset: Dataport Dataset (2 months data from 10 houses)
+This meter-level data is grouped into weekdays and weekends. Pecan_weekday_house_mat and Pecan_weekend_house_mat are the matlab files containing weekday and weekend data across all houses.
+Code: Gen_labels.m is used to generate anomaly scores and labels depending on the user defined threshold.
+
+For long-term data,
+Dataset: HUE Dataset (3years data from 5 houses)
+Code: weatherNormalisedData.m is used to annotate the year long observations.
+
+To evaluate the performance metrics, 
+Dataset: Peccan street data
+Code: MetricEval.m is used to compare all the performance metrics discussed in the paper.
+
+Another contribution of this paper is in publishing the annotated anomalies obtained from short-range and long-range datasets. The csv files are named as Hue_House_anomalies and Dataport_House_anomalies.
+
+Please cite our paper if you use our data or annotated anomalies as a benchmark for your research.
+
+If you have any query feel free to contact mgaur@sfu.ca or meghag@iiitd.ac.in
