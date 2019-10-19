@@ -1,11 +1,11 @@
 %%This file is Copyright (C) 2018 Megha Gaur.
 
-This repository contains the implementation details/code for anomaly detection in building's energy consumption. The reader is suggested to read through the paper to know about the approaches in detail.
+This repository contains the implementation details/code for anomaly detection in building's energy consumption. The reader is suggested to read through the paper to know about the approaches in detail. The link to the paper is https://ieeexplore.ieee.org/document/8709671
 
 For short-term data, 
 Dataset: Dataport Dataset (2 months data from 10 houses)
 This meter-level data is grouped into weekdays and weekends. Pecan_weekday_house_mat and Pecan_weekend_house_mat are the matlab files containing weekday and weekend data across all houses.
-Code: Gen_labels.m is used to generate anomaly scores and labels depending on the user defined threshold.
+Code: Gen_labels.m is used to generate anomaly scores and labels depending on the user defined threshold. We have tested the algorithm on three thresholds, that are 1.65-sd, 2-sd and 2.5-sd.
 
 For long-term data,
 Dataset: HUE Dataset (3years data from 5 houses)
@@ -18,6 +18,6 @@ Code: MetricEval.m is used to compare all the performance metrics discussed in t
 Another contribution of this paper is in publishing the annotated anomalies obtained from short-range and long-range datasets. 
 The csv files named as Hue_House_anomalies and Dataport_House_anomalies are in the AnnotatedAnomalies folder of this repository.
 
-Please cite our paper if you use our data or annotated anomalies as a benchmark for your research.
+Please cite our paper if you use our data or annotated anomalies as a benchmark for your research. You can find the citation from the website, https://ieeexplore.ieee.org/document/8709671
 
 If you have any query feel free to contact mgaur@sfu.ca or meghag@iiitd.ac.in
